@@ -39,7 +39,7 @@ def build_tickers(ts: datetime.datetime):
 
     kalshi_slug = (
         f"KXBTC15M-"
-        f"{end.strftime('%d%b%y').upper()}"
+        f"{end.strftime('%y%b%d').upper()}"
         f"{end.strftime('%H%M')}-{end.strftime('%M')}"
     )
 
