@@ -1,4 +1,3 @@
-import pmxt
 import pandas as pd
 import datetime
 from zoneinfo import ZoneInfo
@@ -97,11 +96,9 @@ async def get_cf_price():
 
 def build_row(ts, kalshi_slug, poly_slug, chainlink_price, cf_price):
     price_diff = None
-    price_diff_abs = None
 
     if chainlink_price is not None and cf_price is not None:
-        price_diff = chainlink_price - cf_price
-        price_spread = abs(price_diff)
+        price_diff = abs(chainlink_price - cf_price)
 
     return {
         "timestamp": ts.isoformat(),
@@ -110,7 +107,6 @@ def build_row(ts, kalshi_slug, poly_slug, chainlink_price, cf_price):
         "chainlink_price": chainlink_price,
         "cf_price": cf_price,
         "price_diff": price_diff,
-        "price_spread": price_spread
     }
 
 
@@ -149,9 +145,8 @@ async def run_tick(output_file):
 
 def sleep_to_next_minute():
     now = datetime.datetime.now()
-    next_min = (now + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
-    time.sleep((next_min - now).total_seconds())
-
+    next_minute = (now + datetime.timedelta(minutes=1)).replace(second=0, microsecond=0)
+    time.sleep((next_minute - now).total_seconds())
 
 # ----------------------------
 # Main loop
