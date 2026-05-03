@@ -1,0 +1,26 @@
+[
+  {
+    "model":"logistic",
+    "mean_fold_auc":0.5144,
+    "std_fold_auc":0.3471,
+    "oof_auc":0.5298,
+    "oof_ap":0.9322,
+    "n_folds_scored":5
+  },
+  {
+    "model":"xgboost",
+    "mean_fold_auc":0.4006,
+    "std_fold_auc":0.2478,
+    "oof_auc":0.3995,
+    "oof_ap":0.9222,
+    "n_folds_scored":5
+  },
+  {
+    "model":"lightgbm",
+    "mean_fold_auc":0.4539,
+    "std_fold_auc":0.1253,
+    "oof_auc":0.4342,
+    "oof_ap":0.9443,
+    "n_folds_scored":5
+  }
+]

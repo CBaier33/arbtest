@@ -1,0 +1,5 @@
+joblib
+pandas
+playwright
+requests
+scikit-learn
